@@ -10,12 +10,10 @@ dependencies {
     implementation "org.grails:grails-dependencies:$grailsVersion", {
         exclude module:'grails-datastore-simple'
     }
-
     implementation "org.grails:grails-web-boot:$grailsVersion"
     implementation project(":grails-plugin")
 
-    implementation "org.hibernate:hibernate-core-jakarta:$hibernate5Version"
-    implementation "org.hibernate:hibernate-ehcache:$hibernate5Version"
+    implementation "org.hibernate:hibernate-core-jakarta:$hibernate6Version"
 
     runtimeOnly "com.bertramlabs.plugins:asset-pipeline-grails:$assetPipelineVersion"
     runtimeOnly "com.h2database:h2"
@@ -24,13 +22,7 @@ dependencies {
     runtimeOnly "org.grails.plugins:fields:$fieldsVersion"
     runtimeOnly "org.grails.plugins:scaffolding:$scaffoldingVersion"
 
-    testImplementation("org.grails:grails-gorm-testing-support:$testingSupportVersion") {
-        exclude group: "org.spockframework", module: "spock-core"
-    }
-    testImplementation("org.grails:grails-web-testing-support:$testingSupportVersion") {
-        exclude group: "org.spockframework", module: "spock-core"
-    }
-
+    testImplementation "org.grails:grails-gorm-testing-support:$testingSupportVersion"
     integrationTestImplementation "org.gebish:geb-spock:$gebVersion"
     integrationTestRuntimeOnly "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"
     integrationTestRuntimeOnly "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
@@ -59,7 +51,3 @@ webdriverBinaries {
         geckodriver "$geckodriverVersion"
     }
 }
-
-
-//compileGroovy.groovyOptions.fork = true
-//compileGroovy.groovyOptions.forkOptions.jvmArgs = ['-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005']

@@ -26,11 +26,11 @@ class HibernateGrailsPlugin extends Plugin {
 
     public static final String DEFAULT_DATA_SOURCE_NAME = HibernateDatastoreSpringInitializer.DEFAULT_DATA_SOURCE_NAME
 
-    def grailsVersion = '3.1.0 > *'
+    def grailsVersion = '7.0.0-SNAPSHOT > *'
 
     def author = 'Grails Core Team'
-    def title = 'Hibernate 5 for Grails'
-    def description = 'Provides integration between Grails and Hibernate 5 through GORM'
+    def title = 'Hibernate 6 for Grails'
+    def description = 'Provides integration between Grails and Hibernate 6 through GORM'
     def documentation = 'http://grails.github.io/grails-data-mapping/latest/'
 
     def observe = ['domainClass']

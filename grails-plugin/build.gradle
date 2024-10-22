@@ -2,7 +2,7 @@ configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
         if(details.requested.group == 'org.grails' &&
                 details.requested.name.startsWith('grails-datastore') &&
-                details.requested.name != 'grails-datastore-gorm-hibernate5') {
+                details.requested.name != 'grails-datastore-gorm-hibernate6') {
             details.useVersion(gormVersion)
         }
         if(details.requested.group == 'org.springframework') {
@@ -27,11 +27,11 @@ dependencies {
 
     api "org.springframework.boot:spring-boot:$springBootVersion"
     api "org.springframework:spring-orm:$springVersion"
-    api "org.hibernate:hibernate-core-jakarta:${hibernate5Version}"
-    api "org.hibernate:hibernate-ehcache:$hibernate5Version"
+    api "org.hibernate:hibernate-core-jakarta:$hibernate6Version"
+    api "org.hibernate:hibernate-ehcache:$hibernate6Version"
     api "org.grails:grails-datastore-web:$gormVersion"
     api "org.grails:grails-datastore-gorm-support:$gormVersion"
-    api project(":grails-datastore-gorm-hibernate5"), {
+    api project(":grails-datastore-gorm-hibernate6"), {
         exclude group:'org.springframework', module:'spring-context'
         exclude group:'org.springframework', module:'spring-core'
         exclude group:'org.springframework', module:'spring-beans'

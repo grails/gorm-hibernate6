@@ -1,5 +1,5 @@
 tasks.withType(Test) {
-    systemProperty("hibernate5.gorm.suite", System.getProperty("hibernate5.gorm.suite") ?: true)
+    systemProperty("hibernate6.gorm.suite", System.getProperty("hibernate6.gorm.suite") ?: true)
     useJUnitPlatform()
     reports.html.required.set(!System.getenv("TRAVIS"))
     reports.junitXml.required.set(!System.getenv("TRAVIS"))

@@ -29,7 +29,7 @@ dependencies {
     implementation project(":grails-plugin")
 
 
-    implementation "org.hibernate:hibernate-core-jakarta:$hibernate5Version"
+    implementation "org.hibernate:hibernate-core-jakarta:$hibernate6Version"
 
     runtimeOnly "com.bertramlabs.plugins:asset-pipeline-grails:$assetPipelineVersion"
     runtimeOnly "com.h2database:h2"

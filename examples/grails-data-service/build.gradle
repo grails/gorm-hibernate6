@@ -19,7 +19,7 @@ dependencies {
     implementation "org.grails.plugins:cache"
     implementation "org.grails.plugins:events"
     implementation project(":grails-plugin")
-    implementation "org.hibernate:hibernate-core-jakarta:$hibernate5Version"
+    implementation "org.hibernate:hibernate-core-jakarta:$hibernate6Version"
     implementation "org.grails.plugins:views-json"
     implementation "org.grails.plugins:views-json-templates"
     implementation "org.grails.plugins:spring-security-rest:$grailsSpringSecurityRestVersion"

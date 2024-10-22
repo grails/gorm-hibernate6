@@ -4,7 +4,7 @@ dependencies {
     }
     api "org.apache.groovy:groovy:$groovyVersion"
     api "org.springframework.boot:spring-boot-autoconfigure:$springBootVersion"
-    api project(":grails-datastore-gorm-hibernate5")
+    api project(":grails-datastore-gorm-hibernate6")
 
     testImplementation "org.grails:grails-shell:$grailsShellVersion", {
         exclude group:'org.apache.groovy', module:'groovy'

@@ -64,7 +64,7 @@ jobs:
         uses: haya14busa/action-cond@v1
         id: docs_target
         with:
-          cond: ${{ github.repository == 'grails/gorm-hibernate5' }}
+          cond: ${{ github.repository == 'grails/gorm-hibernate6' }}
           if_true: "grails/grails-data-mapping"
           if_false: ${{ github.repository }}
       - name: Publish to Github Pages

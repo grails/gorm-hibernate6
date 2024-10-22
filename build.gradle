@@ -77,7 +77,7 @@ subprojects { Project subproject ->
     ext {
         isExample = subproject.name.startsWith('example')
         isPluginProject = subproject.name.endsWith("-plugin") && (subproject.name.startsWith("grails") || subproject.name.startsWith("rx-"))
-        isGrails3PluginProject = subproject.name.endsWith("-plugin")
+        isGrails7PlusPluginProject = subproject.name.endsWith("-plugin")
     }
 
     if(isExample) {
@@ -111,7 +111,7 @@ subprojects { Project subproject ->
                 }
                 if(details.requested.group == 'org.grails' &&
                         details.requested.name.startsWith('grails-datastore') &&
-                        details.requested.name != 'grails-datastore-gorm-hibernate5') {
+                        details.requested.name != 'grails-datastore-gorm-hibernate6') {
                     details.useVersion(gormVersion)
                 }
             }
@@ -201,7 +201,7 @@ subprojects { Project subproject ->
         return
     }
 
-    if(isGrails3PluginProject) {
+    if(isGrails7PlusPluginProject) {
         apply plugin: "org.grails.grails-plugin"       
     }
     else {
@@ -262,7 +262,7 @@ subprojects { Project subproject ->
                         username = u
                         password = p
                     }
-                    if(isGrails3PluginProject) {
+                    if(isGrails7PlusPluginProject) {
                         url  "https://repo.grails.org/grails/plugins3-snapshots-local"
                     } else {
                         url  "https://repo.grails.org/grails/libs-snapshots-local"
@@ -288,9 +288,9 @@ subprojects { Project subproject ->
                     }
 
                     scm {
-                        url = 'scm:git@github.com:grails/gorm-hibernate5.git'
-                        connection = 'scm:git@github.com:grails/gorm-hibernate5.git'
-                        developerConnection = 'scm:git@github.com:grails/gorm-hibernate5.git'
+                        url = 'scm:git@github.com:grails/gorm-hibernate6.git'
+                        connection = 'scm:git@github.com:grails/gorm-hibernate6.git'
+                        developerConnection = 'scm:git@github.com:grails/gorm-hibernate6.git'
                     }
 
                     developers {
@@ -307,7 +307,7 @@ subprojects { Project subproject ->
                 from components.java
 
                 afterEvaluate {
-                    if(isGrails3PluginProject) {
+                    if(isGrails7PlusPluginProject) {
                         artifact source:"${sourceSets.main.groovy.getClassesDirectory().get().getAsFile()}/META-INF/grails-plugin.xml",
                                 classifier:"plugin",
                                 extension:'xml'
@@ -339,18 +339,18 @@ class PublishingConvention {
     Project project
 
     String projectArtifactId
-    String projectName = 'GORM for Hibernate 5'
-    String projectDescription = 'Provides a GORM Object Mapping implementations for Hibernate 5'
+    String projectName = 'GORM for Hibernate 6'
+    String projectDescription = 'Provides a GORM Object Mapping implementations for Hibernate 6'
     String projectURL = 'https://gorm.grails.org/latest/hibernate'
-    String projectIssueTrackerUrl = 'https://github.com/grails/gorm-hibernate5/issues'
-    String projectVcsUrl = 'https://github.com/grails/gorm-hibernate5'
+    String projectIssueTrackerUrl = 'https://github.com/grails/gorm-hibernate6/issues'
+    String projectVcsUrl = 'https://github.com/grails/gorm-hibernate6'
 
     PublishingConvention(Project project) {
         this.project = project
 
         def name = project.name
         if(name.startsWith('grails') && name.endsWith('-plugin')) {
-            name = 'hibernate5'
+            name = 'hibernate6'
         }
         projectArtifactId = name
     }

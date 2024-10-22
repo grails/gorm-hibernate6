@@ -106,7 +106,7 @@ task cleanAsciidoc(type: Delete, dependsOn: copyDocs) {
 
 tasks.withType(Groovydoc) {
     dependsOn('fetchSource')
-    docTitle = "GORM for Hibernate 5 - ${project.version}"
+    docTitle = "GORM for Hibernate 6 - ${project.version}"
     destinationDir = project.file('build/docs/api')
 
     def files

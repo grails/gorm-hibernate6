@@ -27,7 +27,7 @@ buildCache {
 
 
 // Core
-include "grails-datastore-gorm-hibernate5"
+include "grails-datastore-gorm-hibernate6"
 
 // Documentation
 include 'docs'
@@ -36,26 +36,26 @@ include 'docs'
 include "boot-plugin"
 include 'grails-plugin'
 
-include "examples-grails3-hibernate5"
-project(":examples-grails3-hibernate5").projectDir = new File(settingsDir, "examples/grails3-hibernate5")
+include "examples-grails-hibernate"
+project(":examples-grails-hibernate").projectDir = new File(settingsDir, "examples/grails-hibernate")
 
-include "examples-grails3-multiple-datasources"
-project(":examples-grails3-multiple-datasources").projectDir = new File(settingsDir, "examples/grails3-multiple-datasources")
+include "examples-grails-multiple-datasources"
+project(":examples-grails-multiple-datasources").projectDir = new File(settingsDir, "examples/grails-multiple-datasources")
 
-include "examples-grails3-database-per-tenant"
-project(":examples-grails3-database-per-tenant").projectDir = new File(settingsDir, "examples/grails3-database-per-tenant")
+include "examples-grails-database-per-tenant"
+project(":examples-grails-database-per-tenant").projectDir = new File(settingsDir, "examples/grails-database-per-tenant")
 
-include "examples-grails3-schema-per-tenant"
-project(":examples-grails3-schema-per-tenant").projectDir = new File(settingsDir, "examples/grails3-schema-per-tenant")
+include "examples-grails-schema-per-tenant"
+project(":examples-grails-schema-per-tenant").projectDir = new File(settingsDir, "examples/grails-schema-per-tenant")
 
-include "examples-grails3-partitioned-multi-tenancy"
-project(":examples-grails3-partitioned-multi-tenancy").projectDir = new File(settingsDir, "examples/grails3-partitioned-multi-tenancy")
+include "examples-grails-partitioned-multi-tenancy"
+project(":examples-grails-partitioned-multi-tenancy").projectDir = new File(settingsDir, "examples/grails-partitioned-multi-tenancy")
 
-include "examples-standalone-hibernate5"
-project(":examples-standalone-hibernate5").projectDir = new File(settingsDir, "examples/standalone-hibernate5")
+include "examples-standalone-hibernate"
+project(":examples-standalone-hibernate").projectDir = new File(settingsDir, "examples/standalone-hibernate")
 
-include "examples-spring-boot-hibernate5"
-project(":examples-spring-boot-hibernate5").projectDir = new File(settingsDir, "examples/spring-boot-hibernate5")
+include "examples-spring-boot-hibernate"
+project(":examples-spring-boot-hibernate").projectDir = new File(settingsDir, "examples/spring-boot-hibernate")
 
 // TODO: General error during canonicalization: No signature of method: org.codehaus.groovy.ast.ClassCodeExpressionTransformer.transform() is applicable for argument types: (org.codehaus.groovy.ast.expr.MethodCallExpression) values: [org.codehaus.groovy.ast.expr.MethodCallExpression@776b49b2[object: org.codehaus.groovy.ast.expr.VariableExpression@30b9eadd[variable: response] method: org.codehaus.groovy.ast.expr.ConstantExpression@497570fb[status] arguments: org.codehaus.groovy.ast.expr.ArgumentListExpression@412c995d[org.codehaus.groovy.ast.expr.PropertyExpression@3249a1ce[object: org.codehaus.groovy.ast.expr.ClassExpression@4dd94a58[type: org.springframework.http.HttpStatus] property: org.codehaus.groovy.ast.expr.ConstantExpression@2f4919b0[UNPROCESSABLE_ENTITY]]]]]
 //include "examples-grails-data-service"
@@ -64,5 +64,5 @@ project(":examples-spring-boot-hibernate5").projectDir = new File(settingsDir, "
 include "examples-grails-hibernate-groovy-proxy"
 project(":examples-grails-hibernate-groovy-proxy").projectDir = new File(settingsDir, "examples/grails-hibernate-groovy-proxy")
 
-findProject(':boot-plugin').name = 'gorm-hibernate5-spring-boot'
+findProject(':boot-plugin').name = 'gorm-hibernate6-spring-boot'
 

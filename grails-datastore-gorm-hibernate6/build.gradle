@@ -4,7 +4,7 @@ dependencies {
     api "org.apache.groovy:groovy:$groovyVersion"
     api("org.grails:grails-datastore-gorm:$gormVersion")
     api "org.springframework:spring-orm:$springVersion"
-    api("org.hibernate:hibernate-core-jakarta:$hibernate5Version") {
+    api("org.hibernate:hibernate-core-jakarta:$hibernate6Version") {
         exclude group:'commons-logging', module:'commons-logging'
         exclude group:'com.h2database', module:'h2'
         exclude group:'commons-collections', module:'commons-collections'
@@ -19,7 +19,7 @@ dependencies {
         exclude group:'org.slf4j', module:'slf4j-api'
     }
 
-    compileOnly ("org.hibernate:hibernate-ehcache:$hibernate5Version") {
+    compileOnly ("org.hibernate:hibernate-ehcache:$hibernate6Version") {
         exclude group:'commons-collections', module:'commons-collections'
         exclude group:'commons-logging', module:'commons-logging'
         exclude group:'com.h2database', module:'h2'
@@ -40,7 +40,7 @@ dependencies {
     }
     testImplementation "com.h2database:h2:$h2Version"
 
-    testImplementation "org.hibernate:hibernate-ehcache:$hibernate5Version"
+    testImplementation "org.hibernate:hibernate-ehcache:$hibernate6Version"
 
     // groovy proxy fixes bytebuddy to be a bit smarter when it comes to groovy metaClass
     testImplementation "org.yakworks:hibernate-groovy-proxy:$hibernateGroovyProxy"
@@ -52,7 +52,7 @@ dependencies {
     testRuntimeOnly "org.slf4j:slf4j-simple:$slf4jVersion"
     testRuntimeOnly "org.slf4j:jcl-over-slf4j:$slf4jVersion"
     // The groovydoc task needs the Hibernate 4.x jars in the classpath
-    documentation("org.hibernate:hibernate-core-jakarta:${hibernate5Version}")
+    documentation("org.hibernate:hibernate-core-jakarta:$hibernate6Version")
 }
 
 test {
